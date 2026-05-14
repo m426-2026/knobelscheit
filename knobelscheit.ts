@@ -1,26 +1,39 @@
+import { Dice } from './dice.ts'
+
 export const notANumber: string = 'Input is not a number, try again.'
 export const numberNotAvailable: string = 'Number is not available, try again.'
+export const validCombination: string = 'Valid combination, numbers removed.'
+export const rollExceeded: string = 'You exceeded the roll, try again.'
+export const chooseMoreNumbers: string = 'Choose more numbers.'
+export const numbersInUseString: string = 'Current numbers in use:'
 
 export class Knobelscheit {
 	public availableNumbers: Set<number>
 	public usedNumbers: Set<number>
 	public numbersInPlay: Set<number>
+	public dice1: Dice
+	public dice2: Dice
+	public rollCount: number = 0
+
 	constructor() {
 		this.availableNumbers = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9])
 		this.usedNumbers = new Set()
 		this.numbersInPlay = new Set()
+		this.dice1 = new Dice()
+		this.dice2 = new Dice()
 	}
 
-	public validateInput(input: string): string {
+	public validateInput(input: string | null): string {
 		const number = Number(input)
 		if (Number.isNaN(number)) {
 			return notANumber
 		}
+
 		if (!this.availableNumbers.has(number)) {
 			return numberNotAvailable
 		}
 		this.numbersInPlay.add(number)
-		return this.formatNumbersInPlay()
+		return this.checkCurrentPlay() + '\n' + this.formatNumbersInPlay()
 	}
 
 	public useNumbers(): boolean {
@@ -31,7 +44,7 @@ export class Knobelscheit {
 
 		this.numbersInPlay.clear()
 
-		return this.checkState()
+		return this.checkGameState()
 	}
 
 	public getStateAsString(): string {
@@ -44,14 +57,42 @@ export class Knobelscheit {
 		return output
 	}
 
-	private checkState(): boolean {
+	private checkCurrentPlay(): string {
+		const roll = this.dice1.number + this.dice2.number
+		let myValue = 0
+
+		this.numbersInPlay.forEach((value) => (myValue += value))
+		if (myValue < roll) {
+			return chooseMoreNumbers
+		}
+		if (myValue > roll) {
+			this.numbersInPlay.clear()
+			return rollExceeded
+		}
+		this.useNumbers()
+		return validCombination
+	}
+
+	public checkGameState(): boolean {
 		return this.availableNumbers.size == 0
 	}
 
+	public checkRoundState(): boolean {
+		return this.numbersInPlay.size == 0
+	}
+
 	private formatNumbersInPlay(): string {
-		let output = 'Current numbers in use:'
+		let output = numbersInUseString
 		this.numbersInPlay.forEach((value) => (output += ' ' + value))
 
 		return output
+	}
+
+	public rollDie(): string {
+		this.rollCount++
+		this.dice1.roll()
+		this.dice2.roll()
+
+		return 'Dice values: ' + this.dice1.number + ' and ' + this.dice2.number
 	}
 }
