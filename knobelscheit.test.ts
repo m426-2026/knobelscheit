@@ -1,5 +1,5 @@
 import { assert, assertEquals } from '@std/assert'
-import { Knobelscheit } from './knobelscheit.ts'
+import { Knobelscheit, notANumber, numberNotAvailable } from './knobelscheit.ts'
 
 const numbersToUse = new Set([1, 2, 3])
 const allNumbers = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9])
@@ -12,11 +12,10 @@ Deno.test('KNOBEL: validateInput needs to be a number between 1-9', () => {
 	const validCheck = knobel.validateInput('3')
 	const checkOutOfRange = knobel.validateInput('4440')
 	const checkWrongInput = knobel.validateInput('asd')
-
 	// Assert
-	assert(validCheck)
-	assert(checkOutOfRange)
-	assert(checkWrongInput)
+	assertEquals(validCheck, 'Current numbers in use: 3')
+	assertEquals(checkOutOfRange, numberNotAvailable)
+	assertEquals(checkWrongInput, notANumber)
 })
 
 Deno.test('KNOBEL: validateInput needs to be a number inside of knobel.availableNumbers', () => {
@@ -25,13 +24,14 @@ Deno.test('KNOBEL: validateInput needs to be a number inside of knobel.available
 	const knobel = new Knobelscheit()
 
 	// Act
-	knobel.useNumbers(new Set([numberToUse]))
+	knobel.validateInput(String(numberToUse))
+	knobel.useNumbers()
 	const validCheck = knobel.validateInput('4')
-	const numberCheck = knobel.validateInput(String(numberToUse))
+	const invalidCheck = knobel.validateInput(String(numberToUse))
 
 	// Assert
-	assert(validCheck)
-	assert(!numberCheck)
+	assertEquals(validCheck, 'Current numbers in use: 4')
+	assertEquals(invalidCheck, numberNotAvailable)
 })
 
 Deno.test('KNOBEL: useNumbers moves the correct numbers', () => {
@@ -39,30 +39,12 @@ Deno.test('KNOBEL: useNumbers moves the correct numbers', () => {
 	const knobel = new Knobelscheit()
 
 	// Act
-	knobel.useNumbers(numbersToUse)
+	numbersToUse.forEach((value) => knobel.validateInput(String(value)))
+	knobel.useNumbers()
 
 	// Assert
 	assertEquals(knobel.usedNumbers, numbersToUse)
 	assertEquals(knobel.availableNumbers, new Set([4, 5, 6, 7, 8, 9]))
-})
-
-Deno.test('KNOBEL: getState returns the formatted string (no change)', () => {
-	// Arrange
-	const knobel = new Knobelscheit()
-
-	// Assert
-	assertEquals(knobel.getState(), 'Used numbers:\nAvailable numbers: 1 2 3 4 5 6 7 8 9')
-})
-
-Deno.test('KNOBEL: getState returns the formatted string', () => {
-	// Arrange
-	const knobel = new Knobelscheit()
-
-	// Act
-	knobel.useNumbers(numbersToUse)
-
-	// Assert
-	assertEquals(knobel.getState(), 'Used numbers: 1 2 3\nAvailable numbers: 4 5 6 7 8 9')
 })
 
 Deno.test('KNOBEL: checkState makes useNumber return false when availableNumbers not empty', () => {
@@ -70,7 +52,8 @@ Deno.test('KNOBEL: checkState makes useNumber return false when availableNumbers
 	const knobel = new Knobelscheit()
 
 	// Act
-	const check = knobel.useNumbers(numbersToUse)
+	numbersToUse.forEach((value) => knobel.validateInput(String(value)))
+	const check = knobel.useNumbers()
 
 	// Assert
 	assert(!check)
@@ -81,8 +64,29 @@ Deno.test('KNOBEL: checkState makes useNumber return true when availableNumbers 
 	const knobel = new Knobelscheit()
 
 	// Act
-	const check = knobel.useNumbers(allNumbers)
+	allNumbers.forEach((value) => knobel.validateInput(String(value)))
+	const check = knobel.useNumbers()
 
 	// Assert
 	assert(check)
+})
+
+Deno.test('KNOBEL: getState returns the formatted string (no change)', () => {
+	// Arrange
+	const knobel = new Knobelscheit()
+
+	// Assert
+	assertEquals(knobel.getStateAsString(), 'Used numbers:\nAvailable numbers: 1 2 3 4 5 6 7 8 9')
+})
+
+Deno.test('KNOBEL: getState returns the formatted string', () => {
+	// Arrange
+	const knobel = new Knobelscheit()
+
+	// Act
+	numbersToUse.forEach((value) => knobel.validateInput(String(value)))
+	knobel.useNumbers()
+
+	// Assert
+	assertEquals(knobel.getStateAsString(), 'Used numbers: 1 2 3\nAvailable numbers: 4 5 6 7 8 9')
 })
