@@ -2,6 +2,7 @@ import { assert, assertEquals } from '@std/assert'
 import { Knobelscheit } from './knobelscheit.ts'
 
 const numbersToUse = new Set([1, 2, 3])
+const allNumbers = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 Deno.test('KNOBEL: validateInput needs to be a number between 1-9', () => {
 	// Arrange
@@ -62,4 +63,26 @@ Deno.test('KNOBEL: getState returns the formatted string', () => {
 
 	// Assert
 	assertEquals(knobel.getState(), 'Used numbers: 1 2 3\nAvailable numbers: 4 5 6 7 8 9')
+})
+
+Deno.test('KNOBEL: checkState makes useNumber return false when availableNumbers not empty', () => {
+	// Arrange
+	const knobel = new Knobelscheit()
+
+	// Act
+	const check = knobel.useNumbers(numbersToUse)
+
+	// Assert
+	assert(!check)
+})
+
+Deno.test('KNOBEL: checkState makes useNumber return true when availableNumbers empty', () => {
+	// Arrange
+	const knobel = new Knobelscheit()
+
+	// Act
+	const check = knobel.useNumbers(allNumbers)
+
+	// Assert
+	assert(check)
 })
