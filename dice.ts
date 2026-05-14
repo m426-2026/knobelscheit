@@ -1,6 +1,8 @@
 export class Dice {
-	number: number = 0
-	constructor() {}
+	number: number
+	constructor(num?: number) {
+		this.number = num ?? 0
+	}
 
 	public roll(): number {
 		this.number = Math.ceil(Math.random() * 6)

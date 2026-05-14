@@ -5,7 +5,7 @@ export const numberNotAvailable: string = 'Number is not available, try again.'
 export const validCombination: string = 'Valid combination, numbers removed.'
 export const rollExceeded: string = 'You exceeded the roll, try again.'
 export const chooseMoreNumbers: string = 'Choose more numbers.'
-export const numbersInUseString: string = 'Current numbers in use:'
+export const numbersInUseString: string = '\n' + 'Current numbers in use:'
 
 export class Knobelscheit {
 	public availableNumbers: Set<number>
@@ -15,12 +15,12 @@ export class Knobelscheit {
 	public dice2: Dice
 	public rollCount: number = 0
 
-	constructor() {
+	constructor(number1?: number, number2?: number) {
 		this.availableNumbers = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9])
 		this.usedNumbers = new Set()
 		this.numbersInPlay = new Set()
-		this.dice1 = new Dice()
-		this.dice2 = new Dice()
+		this.dice1 = new Dice(number1)
+		this.dice2 = new Dice(number2)
 	}
 
 	public validateInput(input: string | null): string {
