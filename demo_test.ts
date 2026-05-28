@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { formattedAddition, rollDice } from "./demo.ts";
+import { formattedAddition, rollDice, calculateDice } from "./demo.ts";
 
 Deno.test("3 + 5 = 8", function addTest() {
   // Arrange
@@ -32,7 +32,12 @@ Deno.test("roledice 1-6", function rollDiceTest() {
   assertEquals(number >= 1 && number <= 6, true)
 });
 
-
+Deno.test("calculatedice 2-12", function calculateDiceTest(){
+  //When
+  const calculatenumber = calculateDice();
+  //Then
+  assertEquals(calculatenumber >= 2 && calculatenumber <= 12, true)
+})
 
 
 
