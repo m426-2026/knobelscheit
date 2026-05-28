@@ -41,3 +41,12 @@ else
 export function validateInputBoard(board: number[], input: number[]): boolean{
   return input.every((entry) => board.includes(entry));
 }
+
+export function flip(input: number[], board: number[], flipedNumbers: number[]): boolean{
+  input.forEach((entry) => {
+  board.splice(board.indexOf(entry));
+  flipedNumbers.push(entry)
+  
+})
+return true;
+}

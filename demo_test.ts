@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { formattedAddition, rollDice, calculateDice, createBoard, flipNumbers, validateInput, validateInputBoard } from "./demo.ts";
+import { formattedAddition, rollDice, calculateDice, createBoard, flipNumbers, validateInput, validateInputBoard, flip } from "./demo.ts";
 
 Deno.test("3 + 5 = 8", function addTest() {
   // Arrange
@@ -91,5 +91,16 @@ Deno.test("validate input -> input is in Board", function validateInputBoardTest
   const result = validateInputBoard(board, input);
   //Then
   assertEquals(result, false)
+})
+
+Deno.test("flip", function flipTest(){
+  //Given
+  const input = [5, 7];
+  const board = createBoard();
+  const flipedNumbers = flipNumbers();
+  //When
+  const result = flip(input, board, flipedNumbers);
+  //Then
+  assertEquals(result, true);
 })
 
