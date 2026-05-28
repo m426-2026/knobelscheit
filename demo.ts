@@ -44,7 +44,7 @@ export function validateInputBoard(board: number[], input: number[]): boolean{
 
 export function flip(input: number[], board: number[], flipedNumbers: number[]): boolean{
   input.forEach((entry) => {
-  board.splice(board.indexOf(entry));
+  board.splice(board.indexOf(entry), 1);
   flipedNumbers.push(entry)
   
 })
