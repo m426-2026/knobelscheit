@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { formattedAddition, rollDice, calculateDice, createBoard } from "./demo.ts";
+import { formattedAddition, rollDice, calculateDice, createBoard, flipNumbers } from "./demo.ts";
 
 Deno.test("3 + 5 = 8", function addTest() {
   // Arrange
@@ -44,6 +44,13 @@ Deno.test("createborad numbers from 1-9", function createBoardTest(){
   const board = createBoard();
   //Then
   assertEquals(board, [1,2,3,4,5,6,7,8,9])
+});
+
+Deno.test("create Flipednumbers", function flipNumbersTest(){
+//When
+const flipedNumber = flipNumbers();
+//Then
+assertEquals(flipedNumber, [])
 });
 
 

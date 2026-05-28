@@ -15,3 +15,7 @@ export function calculateDice(): number{
 export function createBoard(): number[]{
   return [1,2,3,4,5,6,7,8,9];
 }
+
+export function flipNumbers(): number[]{
+  return [];
+}
