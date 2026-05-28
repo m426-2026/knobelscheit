@@ -35,5 +35,9 @@ else
 {
   return false;
 }
+}
 
+
+export function validateInputBoard(board: number[], input: number[]): boolean{
+  return input.every((entry) => board.includes(entry));
 }
