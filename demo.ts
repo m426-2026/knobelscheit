@@ -19,3 +19,21 @@ export function createBoard(): number[]{
 export function flipNumbers(): number[]{
   return [];
 }
+
+//2. Teil(sven)
+export function validateInput(calculatedNumber: number, input: number[]): boolean{
+  let calculatedInput = 0;
+input.forEach((entry) => {
+  calculatedInput += entry;
+})
+
+if (calculatedInput == calculatedNumber)
+{
+  return true;
+}
+else
+{
+  return false;
+}
+
+}

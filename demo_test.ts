@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { formattedAddition, rollDice, calculateDice, createBoard, flipNumbers } from "./demo.ts";
+import { formattedAddition, rollDice, calculateDice, createBoard, flipNumbers, validateInput } from "./demo.ts";
 
 Deno.test("3 + 5 = 8", function addTest() {
   // Arrange
@@ -52,6 +52,16 @@ const flipedNumber = flipNumbers();
 //Then
 assertEquals(flipedNumber, [])
 });
+
+Deno.test("validate input -> input == Würfelzahl", function validateInputTest(){
+  //Given
+  const calculatedNumber = 12;
+  const input = [5, 7]
+  //When
+  const result = validateInput(calculatedNumber, input);
+  //Then
+  assertEquals(result, true);
+})
 
 
 
