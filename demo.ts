@@ -50,3 +50,14 @@ export function flip(input: number[], board: number[], flipedNumbers: number[]):
 })
 return true;
 }
+
+export function checkFinished(board: number[], flipedNumbers: number[]): boolean{
+  if (board.length === 0 && flipedNumbers.length === 9)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}

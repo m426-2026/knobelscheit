@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { formattedAddition, rollDice, calculateDice, createBoard, flipNumbers, validateInput, validateInputBoard, flip } from "./demo.ts";
+import { formattedAddition, rollDice, calculateDice, createBoard, flipNumbers, validateInput, validateInputBoard, flip, checkFinished } from "./demo.ts";
 
 Deno.test("3 + 5 = 8", function addTest() {
   // Arrange
@@ -104,3 +104,22 @@ Deno.test("flip", function flipTest(){
   assertEquals(result, true);
 })
 
+Deno.test("checkFinished -> board == []", function checkFinishedTest(){
+  //Given
+  const board: number[] = [];
+  const flipedNumber = [1,2,3,4,5,6,7,8,9];
+  //When
+  const result = checkFinished(board, flipedNumber);
+  //Then
+  assertEquals(result, true);
+})
+
+Deno.test("checkFinished -> board == []", function checkFinishednegativeTest(){
+  //Given
+  const board: number[] = [1];
+  const flipedNumber = [1,2,3,4,5,6,7,8,9];
+  //When
+  const result = checkFinished(board, flipedNumber);
+  //Then
+  assertEquals(result, false);
+})
