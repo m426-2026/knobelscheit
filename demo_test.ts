@@ -63,5 +63,13 @@ Deno.test("validate input -> input == Würfelzahl", function validateInputTest()
   assertEquals(result, true);
 })
 
-
+Deno.test("validate input -> input == Würfelzahl", function validateInputTest(){
+  //Given
+  const calculatedNumber = 12;
+  const input = [5, 6]
+  //When
+  const result = validateInput(calculatedNumber, input);
+  //Then
+  assertEquals(result, false);
+})
 
