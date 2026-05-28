@@ -9,5 +9,9 @@ export function rollDice(): number{
 }
 
 export function calculateDice(): number{
-  return rollDice() + rollDice()
+  return rollDice() + rollDice();
+}
+
+export function createBoard(): number[]{
+  return [1,2,3,4,5,6,7,8,9];
 }
