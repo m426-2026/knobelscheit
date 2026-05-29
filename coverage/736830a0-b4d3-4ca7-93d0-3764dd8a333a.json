@@ -1,0 +1,116 @@
+{
+  "scriptId": "337",
+  "url": "file:///Users/schule/Documents/Workspace/M347/knobelscheit/demo.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 649,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "rollDie",
+      "ranges": [
+        {
+          "startOffset": 7,
+          "endOffset": 73,
+          "count": 102
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "rollDice",
+      "ranges": [
+        {
+          "startOffset": 81,
+          "endOffset": 149,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "diceSum",
+      "ranges": [
+        {
+          "startOffset": 157,
+          "endOffset": 211,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "<instance_members_initializer>",
+      "ranges": [
+        {
+          "startOffset": 242,
+          "endOffset": 261,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getNumbers",
+      "ranges": [
+        {
+          "startOffset": 265,
+          "endOffset": 383,
+          "count": 2
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getFlippedNumbers",
+      "ranges": [
+        {
+          "startOffset": 386,
+          "endOffset": 460,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "getOpenNumbers",
+      "ranges": [
+        {
+          "startOffset": 463,
+          "endOffset": 571,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 518,
+          "endOffset": 565,
+          "count": 9
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "isFlipped",
+      "ranges": [
+        {
+          "startOffset": 574,
+          "endOffset": 646,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": false
+    }
+  ]
+}

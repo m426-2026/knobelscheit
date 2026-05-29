@@ -1,0 +1,66 @@
+{
+  "scriptId": "335",
+  "url": "file:///Users/schule/Documents/Workspace/M347/knobelscheit/demo_test.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 1005,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 182,
+          "endOffset": 343,
+          "count": 1
+        },
+        {
+          "startOffset": 218,
+          "endOffset": 341,
+          "count": 100
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 391,
+          "endOffset": 553,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 606,
+          "endOffset": 686,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 748,
+          "endOffset": 1002,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}
