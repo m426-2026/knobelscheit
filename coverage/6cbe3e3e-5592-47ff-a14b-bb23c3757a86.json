@@ -1,0 +1,39 @@
+{
+  "scriptId": "337",
+  "url": "file:///Users/oiven/Library/CloudStorage/OneDrive-Personal/Nevio-Oiven/Schule/Berufsfachschule/2.LJ/2.Semester/M426/knobelscheit/dice.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 367,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "rollDice",
+      "ranges": [
+        {
+          "startOffset": 7,
+          "endOffset": 74,
+          "count": 4
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "rollTwoDice",
+      "ranges": [
+        {
+          "startOffset": 82,
+          "endOffset": 366,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

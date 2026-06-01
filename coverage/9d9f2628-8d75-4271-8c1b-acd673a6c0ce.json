@@ -1,0 +1,28 @@
+{
+  "scriptId": "337",
+  "url": "file:///Users/oiven/Library/CloudStorage/OneDrive-Personal/Nevio-Oiven/Schule/Berufsfachschule/2.LJ/2.Semester/M426/knobelscheit/demo.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 117,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "formattedAddition",
+      "ranges": [
+        {
+          "startOffset": 7,
+          "endOffset": 78,
+          "count": 3
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

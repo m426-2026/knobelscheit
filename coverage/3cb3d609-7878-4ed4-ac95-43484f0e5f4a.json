@@ -1,0 +1,39 @@
+{
+  "scriptId": "335",
+  "url": "file:///Users/oiven/Library/CloudStorage/OneDrive-Personal/Nevio-Oiven/Schule/Berufsfachschule/2.LJ/2.Semester/M426/knobelscheit/dice_test.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 527,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 143,
+          "endOffset": 286,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 341,
+          "endOffset": 524,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}
