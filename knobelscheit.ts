@@ -14,7 +14,7 @@ export function validateInput(input: string) {
     const Regex: RegExp = /[^1-9 && " "]/g;
 
     if (input.match(Regex)) {
-        throw new Error(`Invalid input`);
+        throw new Error(`Schreibe bitte nur Zahlen im angegebenen Vormat (zahl1 zahl2 zhal3..)"`);
     }
 
     const arrayNumber: number[] = stringToArray(input);
@@ -22,7 +22,7 @@ export function validateInput(input: string) {
     for (let i = 0; i <= arrayNumber.length; i++) {
         for (let j = i+1; j <= arrayNumber.length; j++) {
             if (arrayNumber[i] === arrayNumber[j]) {
-                throw new Error(`Invalid input`);
+                throw new Error(`Schreibe keine doppelten Zahlen`);
             }
         }
     }
@@ -46,7 +46,7 @@ export function inputEqualsSumDice(sumInput: number, sumDice: number) {
     }
 }
 
-export function SliceArray(defaultArray, input): number[] {
+export function SliceArray(defaultArray: number[], input: number[]): number[] {
     for (let i = 0; i <= defaultArray.length; i++) {
         for (let j = 0; j <= input.length; j++) {
             if (defaultArray[i] === input[j]) {

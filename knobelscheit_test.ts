@@ -34,10 +34,19 @@ Deno.test("Dice-sum between 2 and 12", function addTest() {
 
 Deno.test("InputCheck Input == Numbers", function addTest() {
     // Arrange
-    const input = "1 2 n 3 3"
+    const input = "1 2 n 3"
 
     // Act & Assert
-    assertThrows(() => validateInput(input), Error, "Invalid input");
+    assertThrows(() => validateInput(input), Error, "Schreibe bitte nur Zahlen im angegebenen Vormat (zahl1 zahl2 zhal3..)");
+
+});
+
+Deno.test("InputCheck Input not double", function addTest() {
+    // Arrange
+    const input = "1 2 3 3"
+
+    // Act & Assert
+    assertThrows(() => validateInput(input), Error, "Schreibe keine doppelten Zahlen");
 
 });
 
