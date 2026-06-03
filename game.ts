@@ -88,11 +88,10 @@ export class Board {
             }
         }
         return result.trim();
-    
     }
 
 
-    private canMakeSum(targetSum: number, startIndex: number):boolean{
+    private canMakeSum(targetSum: number, startIndex: number): boolean{
         if(targetSum === 0){
             return true;
         }
