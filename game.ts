@@ -88,10 +88,11 @@ export class Board {
             }
         }
         return result.trim();
+    
     }
 
 
-    private canMakeSum(targetSum: number, startIndex: number): boolean{
+    private canMakeSum(targetSum: number, startIndex: number):boolean{
         if(targetSum === 0){
             return true;
         }
@@ -104,7 +105,7 @@ export class Board {
             if(this.canMakeSum(targetSum - number, i + 1)){
                 return true;
             }
-            return false;
         }
+        return false;
     }
 }
