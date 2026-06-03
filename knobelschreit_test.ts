@@ -62,3 +62,30 @@ Deno.test("hatGueltigenZug gibt true bei richtigen Kombinationen", () => {
     assert(knobelscheit.hatGueltigenZug(9));
     assert(knobelscheit.hatGueltigenZug(7));
 });
+
+Deno.test("wenn eine Zahl offen ist und keinen gültigen Zug mehr gibt ist das Spiel blockiert", () => {
+
+    const knobelscheit = new Knobelscheit();
+
+    for (const zahl of [2, 3, 4, 5, 6, 7, 8, 9]) knobelscheit.umklappen([zahl], zahl);
+
+    assertEquals(knobelscheit.offeneZahlen(), [1]);
+
+    for (let augensumme = 2; augensumme <= 12; augensumme++){
+        assertFalse(knobelscheit.hatGueltigenZug(augensumme))
+    }
+
+    assert(knobelscheit.istBlockiert());
+})
+
+
+Deno.test("wenn alle Zahlen umgeklappt sind, dann ist das Spiel fertig", () => {
+
+    const knobelscheit = new Knobelscheit();
+
+    for (const zahl of [1, 2, 3, 4, 5, 6, 7, 8, 9]) knobelscheit.umklappen([zahl], zahl);
+
+    assert(knobelscheit.istFertig());
+    assertEquals(knobelscheit.offeneZahlen(), [])
+
+});
