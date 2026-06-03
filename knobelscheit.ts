@@ -32,6 +32,18 @@ export class Knobelscheit{
 
         return augensumme >= 1 && erreichbar(0, augensumme);
     }
+
+    istFertig() : boolean {
+        return this.offen.size === 0;
+    }
+
+    istBlockiert() : boolean {
+        if(this.istFertig()) return false;
+        for(let augensumme = 2; augensumme <= 12; augensumme++){
+            if(this.hatGueltigenZug(augensumme)) return false;
+        }
+        return true
+    }
 }
 
 function summe(zahlen: number[]) : number{
