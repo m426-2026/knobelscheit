@@ -19,7 +19,15 @@ export class Board {
         if(numbers.length === 0){
             return false;
         }
+
+        if(this.hasDuplicates(numbers)){ 
+            return false;
+        }
+
         if(this.sum(numbers) !== diceSum){
+            return false;
+        }
+        if(!this.allNumbersAreOpen(numbers)){
             return false;
         }
 
@@ -29,6 +37,11 @@ export class Board {
         return true;
     }
 
+    isFinished(): boolean {
+        return this.openNumbers.length === 0;
+    }
+
+
     private sum(numbers: number[]): number{
         let total = 0;
         for(const number of numbers){
@@ -36,5 +49,26 @@ export class Board {
         }
         return total;
     }
-}
 
+
+    private hasDuplicates(numbers: number[]): boolean {
+        for(let i = 0; i<numbers.length; i++){
+            for(let j = i + 1; j < numbers.length ; j++){
+                if(numbers[i] === numbers[j]){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private allNumbersAreOpen(numbers: number[]): boolean {
+        for(const number of numbers){
+            if(!this.openNumbers.includes(number)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+}

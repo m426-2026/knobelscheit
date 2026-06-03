@@ -38,3 +38,28 @@ Deno.test("Falsche Summe wird abgelehnt", () => {
     assertEquals(success, false);
     assertEquals(board.getOpenNumbers(), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
 });
+
+Deno.test("Bereits umgeklappte Zahl kann nicht nochmals umgeklappt werden", () => {
+    const board = new Board();
+    board.flipNumbers([3],3);
+    const success = board.flipNumbers([3],3);
+    assertEquals(success, false);
+});
+
+Deno.test("Doppelte Zahlen werden abgelehnt", () => {
+    const board = new Board();
+    const success = board.flipNumbers([3,3],6);
+    assertEquals(success, false);
+});
+
+Deno.test("Spiel beendet, wenn alle Zahlen umgeklappt sind",() => {
+    const board = new Board();
+    board.flipNumbers([1, 2], 3);
+    board.flipNumbers([3, 4], 7);
+    board.flipNumbers([5, 6], 11);
+    board.flipNumbers([7], 7);
+    board.flipNumbers([8], 8);
+    board.flipNumbers([9], 9);
+    assertEquals(board.isFinished(),true);
+});
+
