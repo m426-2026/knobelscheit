@@ -63,3 +63,20 @@ Deno.test("Spiel beendet, wenn alle Zahlen umgeklappt sind",() => {
     assertEquals(board.isFinished(),true);
 });
 
+Deno.test("Board erkennt mögliche Kombination",() => {
+    const board = new Board();
+    assertEquals(board.hasMoveFor(7), true);
+});
+
+Deno.test("Board erkennt unmögliche Kombination", () => {
+    const board = new Board();
+    board.flipNumbers([1, 2, 3, 4, 5, 6, 7, 8], 36);
+    assertEquals(board.getOpenNumbers(), [9]);
+    assertEquals(board.hasMoveFor(5), false);
+});
+
+Deno.test("Boardanzeige zeigt offene und umgeklappte Zahlen", () => {
+    const board = new Board();
+    board.flipNumbers([2, 5], 7);
+    assertEquals(board.show(), "1 [2] 3 4 [5] 6 7 8 9");
+});
