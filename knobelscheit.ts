@@ -14,4 +14,11 @@ export class knobelscheit {
             return true
         return false
     }
+
+    istverloren() : boolean
+    {
+        if(JSON.stringify(this.unumgeklappt) == JSON.stringify([0, 1]))
+            return true
+        return false
+    }
 }

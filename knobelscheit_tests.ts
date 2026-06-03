@@ -35,3 +35,18 @@ test.umklappen(9);
 
 assertEquals(test.istgewonnen(), true);
 });
+
+Deno.test("Spiel verloren", () => {
+
+const test = new knobelscheit();
+test.umklappen(2);
+test.umklappen(3);
+test.umklappen(4);
+test.umklappen(5);
+test.umklappen(6);
+test.umklappen(7);
+test.umklappen(8);
+test.umklappen(9);
+
+assertEquals(test.istverloren(), true)
+});
