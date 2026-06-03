@@ -21,7 +21,7 @@ function game() {
 
         if(input !== ""){
             try {
-                validateInput(input);
+                validateInput(input, defaultArray);
 
                 const inputAsArray = stringToArray(input);
                 const sumInput = calculateSumInput(inputAsArray);

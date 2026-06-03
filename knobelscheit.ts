@@ -10,7 +10,7 @@ export function stringToArray(input: string): number[] { // input: "1 2 3"
 
 }
 
-export function validateInput(input: string) {
+export function validateInput(input: string, defaultArray: number[]) {
     const Regex: RegExp = /[^1-9 && " "]/g;
 
     if (input.match(Regex)) {
@@ -24,6 +24,12 @@ export function validateInput(input: string) {
             if (arrayNumber[i] === arrayNumber[j]) {
                 throw new Error(`Schreibe keine doppelten Zahlen`);
             }
+        }
+    }
+
+    for (let i = 0; i < arrayNumber.length; i++) {
+        if (defaultArray.indexOf(arrayNumber[i]) < 0 ) {
+            throw new Error(`Schreibe bitte nur verfügbare Zahlen`);
         }
     }
 }
@@ -54,6 +60,5 @@ export function SliceArray(defaultArray: number[], input: number[]): number[] {
             }
         }
     }
-
     return defaultArray;
 }
