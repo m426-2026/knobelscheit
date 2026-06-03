@@ -50,3 +50,20 @@ test.umklappen(9);
 
 assertEquals(test.istverloren(), true)
 });
+
+Deno.test("position frei der zahl 6", () => {
+
+const test = new knobelscheit();
+
+assertEquals( test.istfrei(6) , true);
+
+})
+
+Deno.test("position besetzt der zahl 3", () => {
+
+const test = new knobelscheit();
+test.umklappen(3)
+
+assertEquals( test.istfrei(3) , false);
+
+})

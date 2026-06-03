@@ -21,4 +21,11 @@ export class knobelscheit {
             return true
         return false
     }
+
+    istfrei(zahl: number) : boolean
+    {
+        if(this.unumgeklappt.includes(zahl))
+            return true
+        return false
+    }
 }
