@@ -15,7 +15,7 @@ Deno.test("position wechsel der 9", () => {
 const test = new knobelscheit();
 test.umklappen(9);
 
-assertEquals(test.unumgeklappt, [0, 1, 2, 3, 4, 5, 6, 7, 8])
+assertEquals(test.unumgeklappt, [0, 1, 2, 3, 4, 5, 6, 7, 8 ,0])
 assertEquals(test.umgeklappt, [9])
 
 });

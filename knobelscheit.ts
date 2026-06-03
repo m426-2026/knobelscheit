@@ -5,19 +5,19 @@ export class knobelscheit {
     umklappen(zahl: number) : void 
     {
         this.umgeklappt.push(zahl);
-        this.unumgeklappt.splice(zahl)
+        this.unumgeklappt[zahl] = 0;
     }
 
     istgewonnen() : boolean
     {
-        if(this.unumgeklappt.length === 1)
+        if(this.unumgeklappt.every(zahl => zahl === 0))
             return true
         return false
     }
 
     istverloren() : boolean
     {
-        if(JSON.stringify(this.unumgeklappt) == JSON.stringify([0, 1]))
+        if(JSON.stringify(this.unumgeklappt) == JSON.stringify([0, 1 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0]))
             return true
         return false
     }
