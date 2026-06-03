@@ -14,5 +14,27 @@ export class Board {
     getOpenNumbers(): number[] {
         return this.openNumbers;
     }
+
+    flipNumbers(numbers: number[], diceSum: number): boolean {
+        if(numbers.length === 0){
+            return false;
+        }
+        if(this.sum(numbers) !== diceSum){
+            return false;
+        }
+
+        this.openNumbers = this.openNumbers.filter((number) => {
+            return !numbers.includes(number);
+        });
+        return true;
+    }
+
+    private sum(numbers: number[]): number{
+        let total = 0;
+        for(const number of numbers){
+            total += number;
+        }
+        return total;
+    }
 }
 
