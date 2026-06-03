@@ -15,3 +15,26 @@ Deno.test("Board startet mit Zahlen 1 bis 9", () => {
         assertEquals(board.getOpenNumbers(), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
 })
 
+Deno.test("Eine Zahl kann umgeklappt werden", () => {
+    const board = new Board();
+    const success = board.flipNumbers([7], 7);
+
+    assertEquals(success, true);
+    assertEquals(board.getOpenNumbers(), [1, 2, 3, 4, 5, 6, 8, 9]);
+});
+
+Deno.test("Mehrere Zahlen können umgeklappt werden", () => {
+    const board = new Board();
+    const success = board.flipNumbers([3, 4], 7);
+
+    assertEquals(success, true);
+    assertEquals(board.getOpenNumbers(), [1, 2, 5, 6, 7, 8, 9]);
+});
+
+Deno.test("Falsche Summe wird abgelehnt", () => {
+    const board = new Board();
+    const success = board.flipNumbers([3, 4], 8);
+
+    assertEquals(success, false);
+    assertEquals(board.getOpenNumbers(), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+});
