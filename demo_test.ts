@@ -1,14 +1,8 @@
 import { assertEquals } from "@std/assert";
 import { formattedAddition } from "./demo.ts";
+import { Dice } from "./demo.ts";
+import { Knobelscheit } from "./demo.ts";
 
-export class Dice {
-  public rollTwoDice(): [number, number] {
-    return [
-      Math.floor(Math.random() * 6),
-      Math.floor(Math.random() * 6)
-    ];
-  }
-}
 
 Deno.test("3 + 5 = 8", function addTest() {
   // Arrange
@@ -38,4 +32,11 @@ Deno.test("Dice range check", function () {
   const dice = new Dice();
   const [d1, d2] = dice.rollTwoDice();
   assertEquals(d1 >= 1 && d1 <= 6, true);
+});
+
+Deno.test("Initial board game", function () {
+  const game = new Knobelscheit();
+  assertEquals(game.getRollCount(), 0);
+  assertEquals(game.getBoardDisplay(), ["1", "2", "3", "4", "5", "6", "7", "8", "9"]);
+  assertEquals(game.getIsGameOver(), false);
 });
