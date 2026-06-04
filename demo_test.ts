@@ -32,6 +32,7 @@ Deno.test("Dice range check", function () {
   const dice = new Dice();
   const [d1, d2] = dice.rollTwoDice();
   assertEquals(d1 >= 1 && d1 <= 6, true);
+  assertEquals(d2 >= 1 && d2 <= 6, true);
 });
 
 Deno.test("Initial board game", function () {

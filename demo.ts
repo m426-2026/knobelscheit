@@ -4,10 +4,11 @@ export function formattedAddition(a: number, b: number): string {
 
 export class Dice {
   public rollTwoDice(): [number, number] {
-    return [
-      Math.floor(Math.random() * 6),
-      Math.floor(Math.random() * 6)
-    ];
+    const d1 = Math.floor(Math.random() * 6) + 1;
+    const d2 = Math.floor(Math.random() * 6) + 1;
+    return [d1, d2];
+    
+    
   }
 }
 
@@ -30,7 +31,18 @@ export class Knobelscheit {
   public incrementRollCount(): void {
     this.rollCount++;
   }
-
+  public shutTiles(tiles: number[]): boolean {
+    for (const tile of tiles) {
+      const index = tile - 1;
+      if (index < 0 || index >= this.board.length || !this.board[index]) {
+        return false;
+      }
+    }
+    for (const tile of tiles) {
+      this.board[tile - 1] = false;
+    }
+    return true;
+  }
 }
 
 
