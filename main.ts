@@ -1,5 +1,5 @@
-import { Dice } from './dice';
-import { GameBoard } from './gameboard';
+import { Dice } from './dice.ts';
+import { GameBoard } from './gameboard.ts';
 
 
 function displayBoard(state: boolean[]): void {
