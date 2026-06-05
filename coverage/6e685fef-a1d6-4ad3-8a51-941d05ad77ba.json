@@ -1,0 +1,28 @@
+{
+  "scriptId": "314",
+  "url": "file:///C:/Users/brtoz/Codes/M426/m426-knobelscheit/dice.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 154,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "roll",
+      "ranges": [
+        {
+          "startOffset": 7,
+          "endOffset": 153,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

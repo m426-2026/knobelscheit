@@ -1,0 +1,39 @@
+{
+  "scriptId": "312",
+  "url": "file:///C:/Users/brtoz/Codes/M426/m426-knobelscheit/demo_test.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 475,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "addTest",
+      "ranges": [
+        {
+          "startOffset": 114,
+          "endOffset": 279,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "addTest",
+      "ranges": [
+        {
+          "startOffset": 307,
+          "endOffset": 472,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

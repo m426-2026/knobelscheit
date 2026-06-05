@@ -1,0 +1,97 @@
+{
+  "scriptId": "314",
+  "url": "file:///C:/Users/brtoz/Codes/M426/m426-knobelscheit/board.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 574,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "<instance_members_initializer>",
+      "ranges": [
+        {
+          "startOffset": 23,
+          "endOffset": 102,
+          "count": 4
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "getRemaining",
+      "ranges": [
+        {
+          "startOffset": 106,
+          "endOffset": 153,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "flip",
+      "ranges": [
+        {
+          "startOffset": 156,
+          "endOffset": 511,
+          "count": 11
+        },
+        {
+          "startOffset": 210,
+          "endOffset": 290,
+          "count": 13
+        },
+        {
+          "startOffset": 253,
+          "endOffset": 284,
+          "count": 0
+        },
+        {
+          "startOffset": 338,
+          "endOffset": 363,
+          "count": 13
+        },
+        {
+          "startOffset": 388,
+          "endOffset": 415,
+          "count": 1
+        },
+        {
+          "startOffset": 415,
+          "endOffset": 510,
+          "count": 10
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 459,
+          "endOffset": 488,
+          "count": 54
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "isGameOver",
+      "ranges": [
+        {
+          "startOffset": 514,
+          "endOffset": 571,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}
