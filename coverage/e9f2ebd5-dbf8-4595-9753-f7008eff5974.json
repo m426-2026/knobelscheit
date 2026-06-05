@@ -1,0 +1,17 @@
+{
+  "scriptId": "312",
+  "url": "file:///Users/eliasraess/Documents/Lehre/Schule/BBZW/M426/Pair%20Programming%20Auftrag/knobelscheit/game_test.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 1,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

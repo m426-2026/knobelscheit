@@ -1,0 +1,44 @@
+{
+  "scriptId": "312",
+  "url": "file:///Users/eliasraess/Documents/Lehre/Schule/BBZW/M426/Pair%20Programming%20Auftrag/knobelscheit/dice_test.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 497,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "sumDiceTest",
+      "ranges": [
+        {
+          "startOffset": 114,
+          "endOffset": 267,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "rollDiceRange",
+      "ranges": [
+        {
+          "startOffset": 314,
+          "endOffset": 494,
+          "count": 1
+        },
+        {
+          "startOffset": 370,
+          "endOffset": 492,
+          "count": 10
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}
