@@ -2,7 +2,7 @@ import { assertEquals, assertLessOrEqual } from "@std/assert";
 import { formattedAddition } from "./demo.ts";
 import { wuerfeln } from "./wuerfeln.ts";
 import { assertGreaterOrEqual } from "@std/assert";
-import { Spielbrett } from "./Spielbrett.ts";
+import { Spielbrett } from "./spielbrett.ts";
 Deno.test("3 + 5 = 8", function addTest() {
   // Arrange
   const a = 3;
@@ -43,13 +43,13 @@ Deno.test ("start status", () => {
 
 Deno.test ("zug akzeptiert", () => {
   let b = new Spielbrett();
-  assertEquals (b.macheZug([4, 5]), 9);
-  assertEquals (b.getOffene(), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  assertEquals (b.macheZug([4, 5], 9), true);
+  assertEquals (b.getroffene(), [1, 2, 3, 6, 7, 8, 9]);
 });
 
 Deno.test("falscher zug", () => {
   let b = new Spielbrett();
-  assertEquals (b.machezug([4, 6], 9), false);
+  assertEquals (b.macheZug([4, 6], 9), false);
   b.macheZug([1], 1);
   assertEquals(b.macheZug([1], 1), false);
 });
