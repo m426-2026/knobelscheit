@@ -1,5 +1,7 @@
-import { assertEquals } from "@std/assert";
+import { assertEquals, assertLessOrEqual } from "@std/assert";
 import { formattedAddition } from "./demo.ts";
+import { wuerfeln } from "./wuerfeln.ts";
+import { assertGreaterOrEqual } from "@std/assert";
 
 Deno.test("3 + 5 = 8", function addTest() {
   // Arrange
@@ -23,4 +25,13 @@ Deno.test("3 + -5 = -2", function addTest() {
 
   // Then
   assertEquals(actual, "3 + -5 = -2");
+});
+
+
+Deno.test("wuerfel test 1-6", () => {
+  for (let i = 0; i < 50; i++){
+    let result = wuerfeln();
+    assertGreaterOrEqual(result, 1);
+    assertLessOrEqual(result, 6);
+  }
 });
